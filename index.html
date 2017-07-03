@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div id="dowebok">
+    <!--第一屏-->
+    <div class="section first">
+        <img src="images/circle.gif" alt="">
+        <div class="im">
+            <img src="images/geren.png" alt="">
+        </div>
+    </div>
+    <!--第二屏-->
+    <div class="section second ">
+        <div class="photo"></div>
+        <div class="photo1"></div>
+        <div class="name">姓名:徐璐璐</div>
+        <div class="sex">性别:女</div>
+        <div class="age">年龄:20</div>
+        <div class="school">毕业院校:山东省泰山学院</div>
+        <div class="zhuan">专业:应用电子技术</div>
+    </div>
+    <!--第三屏-->
+    <div class="section three ">
+        <div class="big">
+        <div class="h">
+            HTML5+CSS3
+        </div>
+        <div class="j">
+            javascript
+        </div>
+        <div class="a">
+            AJAX
+        </div>
+        <div class="w">web开发</div>                       <div class="yuan"></div>                           <span>我的技能</span>
+        </div>
+    </div>
+    <!--第四屏-->
+    <div class="section four ">
+       <div class="one"></div>
+       <div class="one1">使用HTML+CSS+JS技术</div>
+       <div class="two"></div>
+       <div class="two1">使用插件bootstrap</div>
+       <div class="three"></div>
+       <div class="three1">移动端的插件swiper+zepto</div>
+       <div class="four"></div>
+        <div class="four1">移动端页面使用H5+C3</div>
+
+    </div>
+    <!--第五屏-->
+    <div class="section five" >
+        <div class="img"><img src="images/bb.jpg" alt=""></div>
+        <div class="em">邮箱:123123@qq.com</div>
+        <div class="qq">QQ:12345678</div>
+        <div class="wei">微信:大前端</div>
+        <div class="look"><img src="images/look.gif" alt=""></div>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script>
+    $(function(){
+        //插件初始化代码
+        $('#dowebok').fullpage({
+            afterLoad:function(link,index){
+                console.log(index);
+                $('.section').removeClass('current');
+                //代码的目的 让第一屏刷新时有动画
+                setTimeout(function(){
+                    $('.section').eq(index-1).addClass('current');
+                },100);
+            }
+        });
+    });
+</script>
+</body>
+</html>
